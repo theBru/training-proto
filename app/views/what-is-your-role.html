@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – What is your role?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="/when-did-you-start" method="post">
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  What is your role?
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="your-role" name="your-role" type="radio" value="UX designer">
+                  <label class="govuk-label govuk-radios__label" for="your-role">
+                    UX designer
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="your-role-2" name="your-role" type="radio" value="User researcher">
+                  <label class="govuk-label govuk-radios__label" for="your-role-2">
+                    User researcher
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="your-role-3" name="your-role" type="radio" value="Content designer">
+                  <label class="govuk-label govuk-radios__label" for="your-role-3">
+                    Content designer
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="your-role-4" name="your-role" type="radio" value="Service designer">
+                  <label class="govuk-label govuk-radios__label" for="your-role-4">
+                    Service designer
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="your-role-5" name="your-role" type="radio" value="Visual designer">
+                  <label class="govuk-label govuk-radios__label" for="your-role-5">
+                    Visual designer
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
